@@ -147,7 +147,6 @@ $$
 
 回顧上方的方陣
 
-
 $$
 V_n = \left(
     \begin{matrix}
@@ -225,6 +224,7 @@ V_n^{-1} = \frac{1}{n}\left(
 $$
 
 > [ 補充說明 ] 驗證反矩陣的過程中會用到 \\( n \\) 次單位根的四個性質，若讀者有興趣可以自行鑽研：
+
 > - 對於所有 \\( n, k \geq 0 \\), \\( d > 0 \\), \\( \omega_{dn}^{dk} = \omega_{n}^k \\).
 > - 對於所有正偶數 \\( n \\), \\( \omega_{n}^{n/2} = \omega_{2} = -1 \\).
 > - 對於所有正偶數 \\( n \\) 和非負整數 \\( k \\), 我們有 \\( (\omega_{n}^{k+n/2})^2 = (\omega_n^k)^2 \\).
@@ -398,7 +398,7 @@ $$
 
 這是為了讓 \\( C(x) \\) 的點值表示式有足夠的點可以用。計算所需時間仍為 \\( \Theta(n \log n) \\).
 
-上面是已知 \\( (a_0, a_1, …, a_{n-1}) \\), 求 \\( (A(\omega_{2n}^0), A(\omega_{2n}^1), \cdots, A(\omega_{2n}^{2n-1})) \\) 
+上面是已知 \\( (a_0, a_1, …, a_{n-1}) \\), 求 \\( (A(\omega_{2n}^0), A(\omega_{2n}^1), \cdots, A(\omega_{2n}^{2n-1})) \\)
 
 而接下來是已知 \\( (C(\omega_{2n}^0), C(\omega_{2n}^1), \cdots, C(\omega_{2n}^{2n-1})) \\), 求 \\( (c_0, c_1, …, c_{2n-1}) \\)
 
@@ -489,6 +489,7 @@ $$
 ## 總結
 
 欲計算兩個以係數表示式的多項式相乘，並以係數表示式呈現最後的結果，一共可分為以下三步驟。
+
 - 將兩多項式 \\( A(x), B(x) \\) 的係數表示式利用 FFT 轉換成點值表示式，所需時間 \\( \Theta(n \log n) \\)
 - 將對應的點值表示式兩兩相乘，得到 \\( C(x) \\) 的點值表示式，所需時間 \\( \Theta(n) \\)
 - 將多項式 \\( C(x) \\) 的點值表示式利用 Inverse FFT 轉換成係數表示式，所需時間 \\( \Theta(n \log n) \\)
@@ -572,7 +573,7 @@ vector<long long> multiply(vector<long long> const& a, vector<long long> const& 
 <details><summary>Solution</summary>
 
 讀取輸入資料後，直接呼叫 ```multipy()``` 即可。
- 
+
 </details>
 
 <details><summary>Solution Code</summary>
@@ -658,13 +659,13 @@ int main() {
 ### 例題
 
 > [SPOJ - Maximum Self-Matching](https://www.spoj.com/problems/MAXMATCH/)
-> 
+>
 > 給定一個只包含 ```'a'```, ```'b'``` 和 ```'c'``` 的字串 ```s```.
-> 
+>
 > 定義 \\( m_{s}(i) \\) 為字串 ```s``` 向右移動 \\( i \\) 個字元後與自己匹配的字元個數，其中 \\( 1 \leq i < \lvert \\)```s```\\( \rvert \\).
-> 
+>
 > 求最大的 \\( m_{s}(i) \\) 值。
-> 
+>
 > 設該值為 \\( M \\), 再求所有符合 \\( m_{s}(i) = M \\) 的 \\( i \\) 值。
 
 <details><summary>Solution</summary>
@@ -675,7 +676,7 @@ int main() {
 
 ```baaca``` 經構造會得到 ```01101```, 對應的多項式為 \\( 0x^4 + x^3 + x^2 + 0x + 1 \\).
 
-```acaa``` 經構造會得到 ```1011```, 對應的多項式為 \\( x^3 + 0x^2 + x + 1 \\). 
+```acaa``` 經構造會得到 ```1011```, 對應的多項式為 \\( x^3 + 0x^2 + x + 1 \\).
 
 令 ```r``` 為 ```t``` 的反轉字串，我們同樣地對 ```r``` 構造一個對應的多項式 \\( p_r \\).
 
@@ -783,13 +784,12 @@ int main() {
 
 </details>
 
-
 ### 練習題
 
 > [SPOJ - Ada and Nucleobase](https://www.spoj.com/problems/ADAMATCH/)
 >
 > 給定兩個 DNA 序列 ```s``` 和 ```r```, 其中 ```r``` 的長度比 ```s``` 短。
-> 
+>
 > 輸出 ```r``` 在 ```s``` 所有長度為 \\( \lvert \\)```r```\\( \rvert \\) 的連續子字串中，hamming distance 的最小值。
 
 <details><summary>Solution</summary>
@@ -803,7 +803,7 @@ int main() {
 </details>
 
 > [Codeforces 958 F3 - Lightsabers (hard)](https://codeforces.com/contest/958/problem/F3)
-> 
+>
 > 給定 \\( n \\) 個介於 \\( 1 \\) 到 \\( m \\) 的正整數，求從 \\( n \\) 個數中任取 \\( k \\) 個數有幾種不同的取法。
 
 <details><summary>Solution</summary>
@@ -829,13 +829,13 @@ $$
 > [Codeforces 954 I - Yet Another String Matching Problem](https://codeforces.com/problemset/problem/954/I)
 >
 > 假設有兩個長度相等的字串```s```和```t```. 我們可以不限次數地做以下操作：
-> 
+>
 > 任選兩個不同的字元 \\( c_1, c_2 \\), 並將```s```和```t```中所有的 \\( c_1 \\) 換成 \\( c_2 \\).
-> 
+>
 > 定義兩字串```s```和```t```的距離為：使用最少的操作數將```s```和```t```變成一樣的字串。
-> 
+>
 > 今天給定兩字串 ```S```, ```T```, 兩字串僅包含字元 ```'a'```, ```'b'```, ```'c'```, ```'d'```, ```'e'```, ```'f'```.
-> 
+>
 > 我們要計算每個 ```S``` 中長度為 |```T```| 的字串與 ```T``` 的距離。
 
 <details><summary>Solution</summary>
