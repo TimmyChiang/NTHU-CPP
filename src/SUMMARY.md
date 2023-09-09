@@ -16,7 +16,6 @@
 - [Greedy](greedy/intro.md)
   - [Basic Greedy](greedy/basic.md)
 - [Dynamic Programming]()
-  - [Convex Hull Optimization](dp/convex_hull_optimization.md)
 - [Graph]()
   - [Tree]()
     - [Lowest Common Ancestor](graph/lca.md)
@@ -36,6 +35,7 @@
     - [數論分塊](math/sqrt_decomposition.md)
     - [杜教篩](math/du_sieve.md)
     - [Arithmetic Function Revisit](math/revisit_arithmetic_function.md)
+  - [Fast Fourier Transform](math/fast_fourier_transform.md)
 - [Miscellaneous]()
 - [C++ Programming Tips]()
 
